@@ -1,0 +1,117 @@
+/* .body {
+    background-color: #212529;
+    height: 1500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-1 {
+    width: 50%;
+
+}
+
+.div-2 {
+    width: 50%;
+   
+}
+
+
+@media (max-width: 1900px) {
+  .body {
+    background-color: #212529;
+    height: fit-content;
+    display: grid;
+   
+}
+} */
+
+:root {
+      --primary-bg: #1e1e2f;
+      --secondary-bg: #2a2a3f;
+      --accent-color: #4f46e5;
+      --text-color: #ffffffcc;
+      --card-bg: #ffffff08;
+    }
+
+    /* .all {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+
+
+    } */
+
+   .all {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e2f;
+      color: #ffffffcc;
+    }
+
+    .header {
+      background-color: #2a2a3f;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .header h1 {
+      color: white;
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+      padding: 2rem;
+      height: calc(100vh - 96px); /* hauteur totale - header */
+      gap: 2rem;
+    }
+
+    .panel {
+      height: 100%;
+      flex: 1;
+      background-color: #ffffff08;
+      border: 1px solid #ffffff15;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .panel:hover {
+      transform: translateY(-3px);
+    }
+
+    .panel h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .panel p {
+      font-size: 1.5rem;
+    }
+
+    /* Responsive pour tablette et mobile */
+    @media (max-width: 992px) {
+      .main {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .panel {
+        padding: 1.5rem;
+      }
+    }
