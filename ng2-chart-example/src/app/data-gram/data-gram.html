@@ -1,0 +1,12 @@
+<div>
+    <canvas 
+        *ngIf="isBrowser" 
+        baseChart 
+        width="100%"     
+        height="auto" 
+        type="pie" 
+        [data]="pieChartDat"
+        [options]="pieChartOption"
+        ></canvas>
+</div>
+
