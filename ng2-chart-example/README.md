@@ -1,3 +1,9 @@
+<img width="1920" height="891" alt="Screenshot from 2025-08-07 17-53-02" src="https://github.com/user-attachments/assets/84115039-80f3-4a91-b56d-d1711a8f3eb3" />
+
+
+
+
+
 # MonProjet
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
