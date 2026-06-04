@@ -1,0 +1,110 @@
+/* *{
+    color: white;
+    font-size: large;
+    
+}
+
+.footer {
+    background-color: #041629;
+    height: max-content;
+    
+}
+
+h1 {
+    color: white;
+    font-family: "Bitcount Grid Double", system-ui;
+    font-weight: 500;
+    font-style: italic;
+    margin: auto;
+    font-size: 40px;
+}
+
+.iconlocalise {
+    width: 40px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: x-large;
+    
+} */
+
+.footer {
+  background-color: #041629;
+  color: white;
+  font-size: 16px;
+}
+
+/* Grid responsive : 3 colonnes sur desktop, 1 sur mobile */
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__col p {
+  color: #a8c4d4;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* H1 principal */
+.footer__brand {
+  color: white;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 40px); /* responsive automatique */
+  margin: 0;
+}
+
+/* H2 sections */
+.footer__title {
+  color: #7eb8d4;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Ligne icône + texte */
+.footer__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #a8c4d4;
+  font-size: 14px;
+}
+
+.footer__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* Bas de page */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 1rem 2rem;
+  color: #4a7090;
+  font-size: 13px;
+}
+
+/* Mobile : un peu moins de padding */
+@media (max-width: 576px) {
+  .footer__container {
+    padding: 2rem 1.25rem;
+  }
+}

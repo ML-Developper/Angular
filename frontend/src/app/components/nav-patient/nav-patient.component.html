@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+
+    <h1>Le RDV médical</h1>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+
+
+
+         <li class="nav-item">
+
+          <a
+            class="nav-link"
+            routerLink="/accueilpatient">
+
+            Accueil
+
+          </a>
+
+        <li class="nav-item">
+
+
+
+          <!-- ✅ FIX IMPORTANT -->
+          <a
+            class="nav-link"
+            
+            [routerLink]="['/profilpatient', userId]">
+
+            Profile
+
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            [routerLink]="['/historique-rendezvous',]">
+
+            Historique Rendez-vous
+
+          </a>
+
+        </li>
+
+      </ul>
+
+      <form class="d-flex" role="search">
+
+        <button
+          class="btn btn-outline-success btn-medecin mx-3"
+          type="button"
+          (click)="logout()">
+
+          LOGOUT
+
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</nav>

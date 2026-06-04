@@ -1,0 +1,35 @@
+<app-nav-medecin></app-nav-medecin>
+
+<div class="container mt-5">
+
+  <h3 class="text-primary mb-4">
+    Liste des rendez-vous
+  </h3>
+
+  <table class="table table-bordered table-hover">
+
+    <thead class="table-primary">
+      <tr>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Patient</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+    <tr *ngFor="let r of rdvs">
+  <td>{{ r.date }}</td>
+  <td>{{ r.heure }}</td>
+
+  <td>{{ r.patient?.nom }} {{ r.patient?.prenom }}</td>
+ 
+</tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<app-footer></app-footer>

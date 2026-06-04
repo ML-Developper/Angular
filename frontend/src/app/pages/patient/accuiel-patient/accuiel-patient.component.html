@@ -1,0 +1,144 @@
+<app-nav-patient></app-nav-patient>
+
+
+<div class="container mt-5 block1">
+    <h4 class="title">Prenez rapidement un rendez-vous avec votre médecin !</h4>
+    <p class="parag">Sélectionnez votre médecin, choisissez la date et l'heure de votre rdv et recevez votre sms/mail de
+        confirmation.
+        C’est aussi simple que ça !</p>
+
+</div>
+
+
+
+
+
+
+<div class="container text-center mb-5">
+    <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+        
+
+        <div class="col ">
+            <button (click)="filtrer('Médecine dentaire')" type="button " class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/dentiste.png"> Médecine dentaire</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('O.R.L')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/oreille.png"> O.R.L</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Urologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/stethoscope (1).png">Urologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Cardiologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/cardiologie.png">Cardiologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Orthopédie - Traumatologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/orthopedie.png">Orthopédie - Traumatologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Pneumologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/pneumologie (1).png">Pneumologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Dermatologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/peau.png">Dermatologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Pédiatrie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/pediatrie.png">Pédiatrie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Médecine interne')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/stethoscope (1).png">Médecine interne</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Gynécologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/rm213batch4-aew-06.jpg">Gynécologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Sexologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/icons8-relation-32.png"> Sexologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Rhumatologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/orthopedie.png"> Rhumatologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Ophtalmologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/icons8-ophtalmologie-64.png">Ophtalmologie</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Gastro-entérologue')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/icons8-estomac-40.png">Gastro-entérologue</button>
+        </div>
+        <div class="col">
+            <button (click)="filtrer('Néphrologie')" type="button" class="btn btn-outline-success btn-sp"><img class="icons-sp"
+                    src="../../../../assets/logoIcons/icons8-rognons-50.png">Néphrologie</button>
+        </div>
+    
+    </div>
+</div>
+
+
+<div *ngIf="showTable" class="container mt-5 mb-5 css-table">
+
+  <table class="table table-sm table-success table-hover table-bordered">
+
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Adresse</th>
+        <th>Spécialité</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let m of medecins; let i = index">
+
+        <th>{{ i + 1 }}</th>
+
+        <td>{{ m.nom }}</td>
+
+        <td>{{ m.prenom }}</td>
+
+        <td>{{ m.email }}</td>
+
+        <td>97529112</td>
+
+        <td>{{ m.adresse }}</td>
+
+        <td>{{ m.specialite }}</td>
+
+        <td>
+          <a [routerLink]="['/rendezvous', m._id]">Rendez Vous</a>
+           
+        </td>
+
+      </tr>
+
+      <!-- message si vide -->
+      <tr *ngIf="medecins.length === 0">
+        <td colspan="8" class="text-center">
+          Aucun médecin trouvé
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+
+
+
+<app-footer></app-footer>

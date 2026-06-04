@@ -1,0 +1,123 @@
+
+<app-navbar></app-navbar>
+
+<div class="row m-5" >
+
+<div class="container  col-8">
+    <fieldset class="border p-4 rounded border-warning">
+        <legend class="fw-bold text-primary">Coordonnées</legend>
+        <form action="database.php" method="post">
+            <div class="row">
+                <div id="error-message" class="alert alert-danger d-none">L'âge minimal requis pour gérer votre compte
+                    est de 12 ans.</div>
+                <div class="col-md-4 mb-3">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input [(ngModel)]="patient.nom" placeholder="Nom" type="text" id="nom" name="nom" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input [(ngModel)]="patient.prenom" type="text" id="prenom" name="prenom" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="date" class="form-label">Date de naissance</label>
+                    <input [(ngModel)]="patient.date_n" type="date" id="date" name="date" class="form-control" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="form-label d-block">Genre</label>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="patient.genre" type="radio" name="genre" id="homme" value="Homme" class="form-check-input" required>
+                        <label class="form-check-label" for="homme">Homme</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="patient.genre" type="radio" name="genre" id="femme" value="Femme" class="form-check-input">
+                        <label class="form-check-label" for="femme">Femme</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="gouvernorat" class="form-label">Gouvernorat</label>
+                    <select [(ngModel)]="patient.gouvernerat" id="gouvernorat" name="gouvernorat" class="form-select">
+                        <option selected>Choisir le gouvernorat</option>
+                        <option value="Tunis">Tunis</option>
+                        <option value="Ariana">Ariana</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="La Manouba">La Manouba</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Zaghouan">Zaghouan</option>
+
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Béja">Béja</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Le Kef">Le Kef</option>
+                        <option value="Siliana">Siliana</option>
+
+                        <option value="Sousse">Sousse</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="Sfax">Sfax</option>
+
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+
+                        <option value="Gabès">Gabès</option>
+                        <option value="Médenine">Médenine</option>
+                        <option value="Tataouine">Tataouine</option>
+
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Kébili">Kébili</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="telephone" class="form-label">Téléphone</label>
+                    <input [(ngModel)]="patient.tel" type="number" id="telephone" name="telephone" class="form-control">
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label for="adresse" class="form-label">Adresse</label>
+                    <input [(ngModel)]="patient.adresse" type="text" id="adresse" name="adresse" class="form-control">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="Nomdutilisateur" class="form-label">Email</label>
+                    <input [(ngModel)]="patient.email" type="email" id="Nomdutilisateur" name="Nomdutilisateur" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input [(ngModel)]="patient.password" type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="confirmpassword" class="form-label">Réécrire mot de passe</label>
+                    <input [(ngModel)]="confPassword" type="password" id="confirmpassword" name="confirmpassword" class="form-control" required>
+                </div>
+
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <button type="reset" class="btn btn-danger w-50 ">Reset</button>
+                    <button (click)="savePatient()" type="submit" class="btn btn-primary w-50">Inscrit</button>
+                </div>
+
+                <div class="col-md-12 mt-1  w-100">
+                    <button type="button" class="btn btn-warning w-100" routerLink="/home">Annuller
+                        L'inscription</button>
+
+                </div>
+
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+<div class="col-4">
+  <div class="col text-center ">
+        <img class="img1" src="../../../../assets/images/medecin.png" alt="">
+    </div>
+    
+</div>
+
+
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,340 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff1f2 0%, #0b4ca7 100%);
+
+  box-sizing: border-box;
+}
+
+fieldset {
+  background-color: white;
+}
+
+.card {
+  width: 420px;
+  background: linear-gradient(160deg, #385c83 0%, #1c1649 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Top accent band ── */
+.card-top {
+  height: 6px;
+  background: linear-gradient(90deg, #2eb8a0, #1a7fbf, #2eb8a0);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ── Header with photo ── */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 32px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2eb8a0, #1a7fbf);
+  z-index: 0;
+}
+
+.photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 3px solid #0f1e30;
+  background: #1e3450;
+  /* Placeholder avatar SVG inline */
+}
+
+/* Fallback avatar when no real image */
+.photo-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  border: 3px solid #0f1e30;
+  background: #1e3450;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-placeholder svg {
+  width: 56px;
+  height: 56px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.label-specialite {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2eb8a0;
+  margin-bottom: 6px;
+}
+
+.nom {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f4f8;
+  line-height: 1.2;
+}
+
+.prenom {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #a0b4c8;
+  margin-top: 2px;
+}
+
+/* ── Badge spécialité ── */
+.badge-wrap {
+  padding: 0 32px 22px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(46, 184, 160, 0.12);
+  border: 1px solid rgba(46, 184, 160, 0.3);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: #2eb8a0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Contact info ── */
+.card-body {
+  padding: 10px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.info-row:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.info-row:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.info-row:nth-child(3) {
+  animation-delay: 0.35s;
+}
+
+.info-row:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(26, 127, 191, 0.15);
+  border: 1px solid rgba(26, 127, 191, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box svg {
+  width: 17px;
+  height: 17px;
+  color: #1a7fbf;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #4a6880;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #c8daea;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+a.info-value {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a.info-value:hover {
+  color: #2eb8a0;
+}
+
+/* ── Footer ── */
+.card-footer {
+  background: rgba(174, 161, 161, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #2e4a62;
+  letter-spacing: 1px;
+}
+
+.card-footer span {
+  color: #2eb8a0;
+  font-weight: 700;
+}
+
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.section-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.demo-inline-calendar-card {
+  width: 300px;
+}
+
+mat-calendar {
+  pointer-events: auto;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button.active {
+  background: #3f51b5;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: white;
+}
+
+button.blocked {
+  background: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+button.active {
+  background: #3f51b5;
+  color: white;
+}
+
+.calender {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+
+.affichD {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+
+}

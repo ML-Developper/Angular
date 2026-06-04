@@ -1,0 +1,196 @@
+<app-nav-patient></app-nav-patient>
+
+<div class="row m-5">
+
+  <!-- FORM -->
+  <div class="container col-8">
+
+    <fieldset class="border p-4 rounded border-warning">
+
+      <legend class="fw-bold text-primary">
+        Modifier les coordonnées
+      </legend>
+
+      <form (ngSubmit)="updatePatient()" #f="ngForm">
+
+        <div class="row">
+
+          <!-- NOM -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Nom</label>
+            <input
+              [(ngModel)]="patient.nom"
+              name="nom"
+              type="text"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- PRENOM -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Prénom</label>
+            <input
+              [(ngModel)]="patient.prenom"
+              name="prenom"
+              type="text"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- DATE -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Date de naissance</label>
+            <input
+              [(ngModel)]="patient.date_n"
+              name="date_n"
+              type="date"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- GENRE -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label d-block">Genre</label>
+
+            <div class="form-check form-check-inline">
+              <input
+                [(ngModel)]="patient.genre"
+                name="genre"
+                type="radio"
+                value="Homme"
+                class="form-check-input">
+              <label class="form-check-label">Homme</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input
+                [(ngModel)]="patient.genre"
+                name="genre"
+                type="radio"
+                value="Femme"
+                class="form-check-input">
+              <label class="form-check-label">Femme</label>
+            </div>
+
+          </div>
+
+          <!-- GOUVERNORAT -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Gouvernorat</label>
+
+            <select
+              [(ngModel)]="patient.gouvernerat"
+              name="gouvernerat"
+              class="form-select">
+
+              <option value="">Choisir</option>
+
+              <option value="Tunis">Tunis</option>
+              <option value="Ariana">Ariana</option>
+              <option value="Ben Arous">Ben Arous</option>
+              <option value="Sousse">Sousse</option>
+              <option value="Sfax">Sfax</option>
+
+            </select>
+
+          </div>
+
+          <!-- TELEPHONE -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Téléphone</label>
+            <input
+              [(ngModel)]="patient.tel"
+              name="tel"
+              type="text"
+              class="form-control">
+          </div>
+
+          <!-- ADRESSE -->
+          <div class="col-12 mb-3">
+            <label class="form-label">Adresse</label>
+            <input
+              [(ngModel)]="patient.adresse"
+              name="adresse"
+              type="text"
+              class="form-control">
+          </div>
+
+          <!-- EMAIL -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Email</label>
+            <input
+              [(ngModel)]="patient.email"
+              name="email"
+              type="email"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Mot de passe</label>
+            <input
+              [(ngModel)]="patient.password"
+              name="password"
+              type="password"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- CONF PASSWORD -->
+          <div class="col-md-4 mb-3">
+            <label class="form-label">Confirmer mot de passe</label>
+            <input
+              [(ngModel)]="confPassword"
+              name="confPassword"
+              type="password"
+              class="form-control"
+              required>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="col-12 mt-3 d-flex justify-content-between">
+
+            <button
+              type="reset"
+              class="btn btn-danger w-50 me-2">
+              Reset
+            </button>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-50">
+              Modifier
+            </button>
+
+          </div>
+
+          <!-- CANCEL -->
+          <div class="col-12 mt-2">
+            <button
+              type="button"
+              class="btn btn-warning w-100"
+              routerLink="/accueilpatient">
+              Annuler
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+
+    </fieldset>
+
+  </div>
+
+  <!-- IMAGE -->
+  <div class="col-4 text-center">
+    <img
+      class="img1"
+      src="../../../../assets/images/medecin.png"
+      alt="">
+  </div>
+
+</div>
+
+<app-footer></app-footer>

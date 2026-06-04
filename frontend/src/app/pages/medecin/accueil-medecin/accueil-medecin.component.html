@@ -1,0 +1,110 @@
+<app-nav-medecin></app-nav-medecin>
+
+
+
+
+
+
+<div class="container mt-5 mb-5" *ngIf="medecin">
+
+  <div class="card shadow-lg border-0 p-4">
+
+    <!-- HEADER -->
+    <div class="text-center">
+
+      <img [src]="'http://localhost:3000/images/' + medecin.image" width="160" height="160"
+        class="rounded-circle border border-3 border-success mb-3">
+
+      <h2 class="fw-bold">
+        Dr. {{ medecin?.nom }} {{ medecin.prenom }}
+      </h2>
+
+      <h5 class="text-success">
+        {{ medecin?.specialite }}
+      </h5>
+
+    </div>
+
+    <hr>
+
+    <!-- INFORMATIONS -->
+    <div class="row mt-4">
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Email :</strong><br>
+          {{ medecin?.email }}
+        </p>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Téléphone :</strong><br>
+          {{ medecin?.tel }}
+        </p>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Adresse :</strong><br>
+          {{ medecin?.adresse }}
+        </p>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Assurance :</strong><br>
+          {{ medecin?.assurance_m }}
+        </p>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Heure début :</strong><br>
+          {{ medecin?.heure_o }}
+        </p>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>Heure fin :</strong><br>
+          {{ medecin?.heure_f }}
+        </p>
+      </div>
+
+    </div>
+
+    <!-- JOURS TRAVAIL -->
+    <div class="mt-4">
+
+      <h5 class="text-success mb-3">
+        Jours de travail
+      </h5>
+
+      <div class="d-flex flex-wrap gap-2">
+
+        <span *ngFor="let jour of medecin?.jours_travaille || []" class="badge bg-success p-2">
+          {{ jour }}
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class="text-center mt-5">
+
+      <button type="button" class="btn btn-success" [routerLink]="['/medecin/update', medecin._id]" >Modifier Profil</button>
+
+     
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

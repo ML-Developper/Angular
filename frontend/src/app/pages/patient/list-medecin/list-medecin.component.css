@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eff1f2 0%, #0b4ca7 100%);
+    
+    box-sizing: border-box;
+}
+
+.css-table {
+    background: rgba(208, 213, 211, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(231, 7, 7, 0.2);
+}

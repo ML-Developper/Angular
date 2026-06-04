@@ -1,0 +1,26 @@
+
+
+
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eff1f2 0%, #0b4ca7 100%);
+
+    box-sizing: border-box;
+}
+
+fieldset {
+    background-color: white;
+}
+
+
+.img1 {
+  margin-top: 20%;
+  width: 70%;
+ 
+}
+
+
+
+

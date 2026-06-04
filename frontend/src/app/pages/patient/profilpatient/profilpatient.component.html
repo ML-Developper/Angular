@@ -1,0 +1,66 @@
+<app-nav-patient></app-nav-patient>
+
+<div class="profile-container">
+
+  <div class="profile-card">
+
+    <div class="profile-header">
+
+      <h2>
+        {{ patient?.prenom }} {{ patient?.nom }}
+      </h2>
+
+      <p>{{ patient?.genre }}</p>
+
+    </div>
+
+    <div class="profile-body">
+
+      <div class="info">
+        <label>Nom :</label>
+        <span>{{ patient?.nom }}</span>
+      </div>
+
+      <div class="info">
+        <label>Prénom :</label>
+        <span>{{ patient?.prenom }}</span>
+      </div>
+
+      <div class="info">
+        <label>Date de naissance :</label>
+        <span>{{ patient?.date_n }}</span>
+      </div>
+
+      <div class="info">
+        <label>Gouvernorat :</label>
+        <span>{{ patient?.gouvernerat }}</span>
+      </div>
+
+      <div class="info">
+        <label>Téléphone :</label>
+        <span>{{ patient?.tel }}</span>
+      </div>
+
+      <div class="info">
+        <label>Adresse :</label>
+        <span>{{ patient?.adresse }}</span>
+      </div>
+
+      <div class="info">
+        <label>Email :</label>
+        <span>{{ patient?.email }}</span>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <button class="btn-edit" [routerLink]="['/update-patient', patient?._id]">
+        Modifier
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

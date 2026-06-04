@@ -1,0 +1,85 @@
+.container {
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #35557c;
+    text-align: center;
+}
+
+.rdv-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.rdv-card:hover {
+    transform: translateY(-5px);
+}
+
+.top-bar {
+    height: 8px;
+    background: #35557c;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h4 {
+    color: #35557c;
+    margin-bottom: 5px;
+}
+
+.specialite {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.label {
+    font-weight: bold;
+    color: #35557c;
+}
+
+.status {
+    margin-top: 20px;
+    background: #d4edda;
+    color: #155724;
+    padding: 8px 15px;
+    border-radius: 20px;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.empty-box {
+    text-align: center;
+    padding: 50px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+
+.rdv-past {
+  border-left: 6px solid #e74c3c; /* rouge */
+  background: #fff5f5;
+}
+
+.rdv-today {
+  border-left: 6px solid #f1c40f; /* jaune */
+  background: #fffdf0;
+}
+
+.rdv-future {
+  border-left: 6px solid #2ecc71; /* vert */
+  background: #f4fff7;
+}

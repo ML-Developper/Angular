@@ -1,0 +1,109 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eff1f2 0%, #0b4ca7 100%);
+
+    box-sizing: border-box;
+}
+
+fieldset {
+    background-color: white;
+}
+
+
+.img1 {
+  margin-top: 20%;
+  width: 70%;
+ 
+}
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-card {
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+  background: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+
+
+.profile-header h2 {
+  margin-bottom: 5px;
+}
+
+.profile-body {
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+    justify-content: start;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info label {
+  font-weight: bold;
+  color: #333;
+}
+
+.info span {
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-edit {
+  background: #1976d2;
+  width: 100%;
+}
+
+
+
+.btn-edit:hover {
+  background: #125aa0;
+}
+

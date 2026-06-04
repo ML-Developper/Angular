@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg" >
+  <div class="container">
+    <h1>Le RDV médical</h1>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ">
+
+        <li class="nav-item">
+          <a class="nav-link "  routerLink="/home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/formpatient" >Votre premier Rendez-vous</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/contactez-nous">Contactez-nous</a>
+        </li>
+        
+      </ul>
+
+
+      <form class="d-flex" role="search">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> -->
+        <button class="btn btn-outline-success btn-medecin" type="button" routerLink="/formedecin">Vous etes Medecin</button>
+        <button class="btn btn-outline-success btn-medecin mx-3" type="button" routerLink="/login">LOGIN</button>
+
+      </form>
+      
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,227 @@
+<app-navbar></app-navbar>
+
+
+<div class="container mt-1 mb-1 ">
+    <fieldset class="border p-4 rounded border-warning">
+        <legend class="fw-bold text-primary">Coordonnées</legend>
+        <form (ngSubmit)="saveMedecin()" #f="ngForm">
+            <div class="row">
+                <div id="error-message" class="alert alert-danger d-none">L'âge minimal requis pour gérer votre compte
+                    est de 12 ans.</div>
+                <div class="col-md-4 mb-3">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input [(ngModel)]="medecin.nom" type="text" id="nom" name="nom" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input [(ngModel)]="medecin.prenom" type="text" id="prenom" name="prenom" class="form-control"
+                        required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="date" class="form-label">Date de naissance</label>
+                    <input [(ngModel)]="medecin.date_n" type="date" id="date" name="date" class="form-control" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="form-label d-block">Genre</label>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="medecin.genre" type="radio" name="genre" id="homme" value="Homme"
+                            class="form-check-input" required>
+                        <label class="form-check-label" for="homme">Homme</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="medecin.genre" type="radio" name="genre" id="femme" value="Femme"
+                            class="form-check-input" required="">
+                        <label class="form-check-label" for="femme">Femme</label>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="gouvernorat" class="form-label">Gouvernorat</label>
+                    <select [(ngModel)]="medecin.gouvernerat" id="gouvernorat" name="gouvernorat" class="form-select">
+                        <option selected>Choisir le gouvernorat</option>
+                        <option value="Tunis">Tunis</option>
+                        <option value="Ariana">Ariana</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="La Manouba">La Manouba</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Zaghouan">Zaghouan</option>
+
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Béja">Béja</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Le Kef">Le Kef</option>
+                        <option value="Siliana">Siliana</option>
+
+                        <option value="Sousse">Sousse</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="Sfax">Sfax</option>
+
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+
+                        <option value="Gabès">Gabès</option>
+                        <option value="Médenine">Médenine</option>
+                        <option value="Tataouine">Tataouine</option>
+
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Kébili">Kébili</option>
+                    </select>
+                </div>
+
+                <div class="row align-items-center">
+
+                    <!-- UPLOAD -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label d-inline" style="margin-right: 300px;">Photo du médecin</label>
+
+                        <button type="button" class="btn btn-secondary" (click)="fileInput.click()">
+                            📷 Choisir une image
+                        </button>
+
+                        <input #fileInput type="file" hidden accept="image/*" (change)="onFileSelected($event)">
+                    </div>
+
+                    <!-- PREVIEW -->
+                    <div class="col-md-6 mb-3 text-center" *ngIf="imagePreview">
+                        <img [src]="imagePreview" class="img-thumbnail" style="max-width: 150px;">
+                    </div>
+
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label for="adresse" class="form-label">Adresse</label>
+                    <input [(ngModel)]="medecin.adresse" type="text" id="adresse" name="adresse" class="form-control" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="Nomdutilisateur" class="form-label">Email</label>
+                    <input [(ngModel)]="medecin.email" type="email" id="Nomdutilisateur" name="Nomdutilisateur"
+                        class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input [(ngModel)]="medecin.password" type="password" id="password" name="password"
+                        class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="confirmpassword" class="form-label">Réécrire mot de passe</label>
+                    <input [(ngModel)]="confirmPassword" type="password" id="confirmpassword" name="confirmpassword"
+                        class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="domaines" class="form-label">Spécialité</label>
+                    <select [(ngModel)]="medecin.specialite" id="domaines" name="domaines" class="form-select" required>
+                        <option selected>Choisir une spécialité</option>
+                        <option value="Informatique">Médecine dentaire</option>
+                        <option value="Médecine">O.R.L</option>
+                        <option value="Commerce">Urologie</option>
+                        <option value="Commerce">Cardiologie</option>
+                        <option value="Commerce">Orthopédie - Traumatologie</option>
+                        <option value="Commerce">Pneumologie</option>
+                        <option value="Commerce">Dermatologie</option>
+                        <option value="Commerce">Pédiatrie</option>
+                        <option value="Commerce">Médecine interne</option>
+                        <option value="Commerce">Gynécologie</option>
+                        <option value="Commerce">Sexologie</option>
+                        <option value="Commerce">Rhumatologie</option>
+                        <option value="Commerce">Ophtalmologie</option>
+                        <option value="Commerce">Gastro-entérologue</option>
+                        <option value="Commerce">Néphrologie</option>
+
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label d-block">Assurance Maladie</label>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="medecin.assurance_m" type="radio" name="assurance" id="oui" value="true"
+                            class="form-check-input" required>
+                        <label class="form-check-label" for="oui">OUI</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="medecin.assurance_m" type="radio" name="assurance" id="non" value="false"
+                            class="form-check-input" required>
+                        <label class="form-check-label" for="non">NON</label>
+                    </div>
+                </div>
+
+                <div class="">
+                    <label class="form-label d-block">Jours Travailles</label>
+                    <div class="col-md-12 mb-3 btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input [(ngModel)]="medecin.jours_travaille.lundi" name="lundi" type="checkbox"
+                            class="btn-check" id="btncheck1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck1">Lundi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.mardi" name="mardi" type="checkbox"
+                            class="btn-check" id="btncheck2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck2">Mardi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.mercredi" name="mercredi" type="checkbox"
+                            class="btn-check" id="btncheck3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck3">Mercredi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.jeudi" name="jeudi" type="checkbox"
+                            class="btn-check" id="btncheck4" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck4">Jeudi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.vendredi" name="vendredi" type="checkbox"
+                            class="btn-check" id="btncheck5" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck5">Vendredi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.samedi" name="samedi" type="checkbox"
+                            class="btn-check" id="btncheck6" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck6">Samedi</label>
+
+                        <input [(ngModel)]="medecin.jours_travaille.dimanche" name="dimanche" type="checkbox"
+                            class="btn-check" id="btncheck7" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck7">Dimanche</label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 mb-3">
+
+                    <div class="col-md-7 d-flex justify-content-between">
+                        <label for="heureExemple" class="form-label">Ouverture</label>
+
+
+                        <label for="heureExemple" class="form-label">Fermuture</label>
+
+
+                    </div>
+
+                    <div class="col-md-12 d-flex justify-content-between">
+
+
+                        <input [(ngModel)]="medecin.heure_o" type="time" name="heure_o" class="form-control"
+                            id="heureExemple" required>
+
+
+                        <input [(ngModel)]="medecin.heure_f" type="time" name="heure_f" class="form-control"
+                            id="heureExemple" required>
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    
+                    <button type="button" class="btn btn-warning w-50" routerLink="/accueil-medecin">Annuller</button>
+                    <button type="submit" class="btn btn-primary w-50">Update</button>
+                </div>
+
+             
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+<app-footer></app-footer>

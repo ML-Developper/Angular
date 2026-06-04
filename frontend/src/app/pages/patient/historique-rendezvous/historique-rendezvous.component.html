@@ -1,0 +1,78 @@
+
+<app-nav-patient></app-nav-patient>
+
+
+<div class="container py-5">
+
+    <h2 class="title mb-4">
+        Historique des Rendez-vous
+    </h2>
+
+    <div *ngIf="loading" class="text-center">
+        Chargement...
+    </div>
+
+    <div *ngIf="!loading && rendezvousList.length === 0" class="empty-box">
+
+        Aucun rendez-vous trouvé.
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6" *ngFor="let rdv of rendezvousList">
+
+            <div class="rdv-card"  [ngClass]="getRdvClass(rdv.date)">
+
+                <div class="top-bar"></div>
+
+                <div class="card-content">
+
+                    <!-- DOCTEUR -->
+                    <h4>
+                        Dr. {{ medecinsMap[rdv.id_medecin]?.nom }}
+                        {{ medecinsMap[rdv.id_medecin]?.prenom }}
+                    </h4>
+
+                    <p class="specialite">
+                        {{ medecinsMap[rdv.id_medecin]?.specialite }}
+                    </p>
+
+                    
+
+                    <!-- DATE -->
+                    <div class="info">
+                        <span class="label">Date :</span>
+                        {{ rdv.date | date:'fullDate' }}
+                    </div>
+
+                    <!-- HEURE -->
+                    <div class="info">
+                        <span class="label">Heure :</span>
+                        {{ rdv.heure }}
+                    </div>
+
+                    <!-- ADRESSE -->
+                    <div class="info">
+                        <span class="label">Adresse :</span>
+                        {{ medecinsMap[rdv.id_medecin]?.adresse }}
+                    </div>
+
+                  
+
+                    
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<app-footer></app-footer>
